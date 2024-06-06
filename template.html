@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Map</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR8UWNV9HwCWs1fR9soLmX0zJvTV8qRp4"></script>
+    <script>
+        function initMap() {
+            var mapOptions = {
+                zoom: 5,
+                center: {lat: 36.7783, lng: -119.4179}  // Center of California
+            };
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            var events = EVENT_DATA;  // will be replaced by the Python script
+            console.log('Event data:', events);  // Log event data to console for debugging
+
+            events.forEach(function(event) {
+                var position = {lat: event.latitude, lng: event.longitude};
+                console.log('Adding marker at:', position);  // Log each marker position
+                var marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    title: event.game_title
+                });
+
+                var infoWindow = new google.maps.InfoWindow({
+                    content: `<div>
+                                <h3>${event.game_title}</h3>
+                                <p><strong>Organizer:</strong> ${event.organizer_name}</p>
+                                <p><strong>Address:</strong> ${event.street_address}, ${event.city_code}, ${event.pref_code}, ${event.postcode}, ${event.country_code}</p>
+                                <p><strong>Start Date:</strong> ${event.start_datetime}</p>
+                                <p><strong>Timezone:</strong> ${event.timezone}</p>
+                                <p><strong>Max Join Count:</strong> ${event.max_join_count}</p>
+                                <p><strong>Game Format Name:</strong> ${event.game_format_name}</p>
+                                <p><strong>Phone Number:</strong> ${event.phone_number}</p>
+                                <p><strong>Entry Fee:</strong> ${event.entry_fee_currency_code}${event.entry_fee}</p>
+                              </div>`
+                });
+
+                marker.addListener('click', function() {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+    </script>
+</head>
+<body onload="initMap()">
+    <div id="map" style="height: 100vh; width: 100%;"></div>
+</body>
+</html>

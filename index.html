@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Map</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR8UWNV9HwCWs1fR9soLmX0zJvTV8qRp4"></script>
+    <script>
+        function initMap() {
+            var mapOptions = {
+                zoom: 5,
+                center: {lat: 36.7783, lng: -119.4179}  // Center of California
+            };
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            var events = [
+    {
+        "latitude": 37.09024,
+        "longitude": -95.712891,
+        "start_datetime": "2024-06-04T11:30:00",
+        "timezone": "America/Denver",
+        "max_join_count": 12,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-UT",
+        "postcode": "84057",
+        "city_code": "Orem",
+        "street_address": "Ste B",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "Boardgames and Beyond",
+        "phone_number": "3859850649",
+        "entry_fee": "50.000",
+        "entry_fee_currency_code": "usd"
+    },
+    {
+        "latitude": 40.0310253,
+        "longitude": -111.7530353,
+        "start_datetime": "2024-06-04T11:30:00",
+        "timezone": "America/Denver",
+        "max_join_count": 12,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-UT",
+        "postcode": "84651",
+        "city_code": "Payson",
+        "street_address": "855 Turf Farm Road Unit F ",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "Boardgames and Beyond Payson",
+        "phone_number": "3854397018",
+        "entry_fee": "50.000",
+        "entry_fee_currency_code": "usd"
+    },
+    {
+        "latitude": 32.796278,
+        "longitude": -115.5823375,
+        "start_datetime": "2024-06-04T13:00:00",
+        "timezone": "America/Los_Angeles",
+        "max_join_count": 32,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-CA",
+        "postcode": "92243",
+        "city_code": "El Centro",
+        "street_address": "2299 w adams Ave suite 109",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "BEliteGaming",
+        "phone_number": "4422714177",
+        "entry_fee": "20.000",
+        "entry_fee_currency_code": "Usd"
+    },
+    {
+        "latitude": 33.4533703,
+        "longitude": -112.3532554,
+        "start_datetime": "2024-06-04T13:00:00",
+        "timezone": "America/Phoenix",
+        "max_join_count": 32,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-AZ",
+        "postcode": "85338",
+        "city_code": "goodyear",
+        "street_address": "13670 w auto dr goodyear az 85338",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "ship my cards",
+        "phone_number": "6027176679",
+        "entry_fee": "15.000",
+        "entry_fee_currency_code": "15"
+    },
+    {
+        "latitude": 44.0684068,
+        "longitude": -87.8811528,
+        "start_datetime": "2024-06-04T13:00:00",
+        "timezone": "America/Chicago",
+        "max_join_count": 12,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-WI",
+        "postcode": "54245",
+        "city_code": "Valders",
+        "street_address": "336 North Jackson",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "Collectisales",
+        "phone_number": "9203209840",
+        "entry_fee": "10.000",
+        "entry_fee_currency_code": "USD"
+    },
+    {
+        "latitude": 40.1167364,
+        "longitude": -75.2824949,
+        "start_datetime": "2024-06-04T14:00:00",
+        "timezone": "America/New_York",
+        "max_join_count": 64,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-PA",
+        "postcode": "19462",
+        "city_code": "Plymouth Meeting",
+        "street_address": "500 W Germantown Pike Ste 2270",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "Waffles and Enthusiasm",
+        "phone_number": "4452252276",
+        "entry_fee": "10.000",
+        "entry_fee_currency_code": "USD"
+    },
+    {
+        "latitude": 32.7023986,
+        "longitude": -114.6017527,
+        "start_datetime": "2024-06-04T16:00:00",
+        "timezone": "America/Phoenix",
+        "max_join_count": 60,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-AZ",
+        "postcode": "85365",
+        "city_code": "Yuma",
+        "street_address": "1401 South Yuma Palms Pkwy Suite 8",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "Lost Empire Games",
+        "phone_number": "9282485751",
+        "entry_fee": "8.000",
+        "entry_fee_currency_code": "USD"
+    },
+    {
+        "latitude": 42.858754,
+        "longitude": -112.446333,
+        "start_datetime": "2024-06-04T18:00:00",
+        "timezone": "America/Denver",
+        "max_join_count": 50,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-ID",
+        "postcode": "83204",
+        "city_code": "Pocatello",
+        "street_address": "538 South Main st",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "Xeus & Apollo's",
+        "phone_number": "8013501771",
+        "entry_fee": "5.000",
+        "entry_fee_currency_code": "USD"
+    },
+    {
+        "latitude": 28.3748682,
+        "longitude": -80.7391917,
+        "start_datetime": "2024-06-04T18:00:00",
+        "timezone": "America/New_York",
+        "max_join_count": 64,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-FL",
+        "postcode": "32922",
+        "city_code": "Cocoa",
+        "street_address": "801 Dixon Blvd Suite 1133",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "GamerzRUs",
+        "phone_number": "3217357057",
+        "entry_fee": "6.000",
+        "entry_fee_currency_code": "USD"
+    },
+    {
+        "latitude": 39.7708542,
+        "longitude": -84.1067364,
+        "start_datetime": "2024-06-04T18:00:00",
+        "timezone": "America/New_York",
+        "max_join_count": 40,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-OH",
+        "postcode": "45431",
+        "city_code": "Dayton",
+        "street_address": "The Game Haven",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "The Game Haven",
+        "phone_number": "9372525635",
+        "entry_fee": "6.000",
+        "entry_fee_currency_code": "USD"
+    },
+    {
+        "latitude": 31.7547622,
+        "longitude": -106.3414364,
+        "start_datetime": "2024-06-04T18:00:00",
+        "timezone": "America/Denver",
+        "max_join_count": 42,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-TX",
+        "postcode": "79925",
+        "city_code": "El Paso",
+        "street_address": "1188 N Yarbrough Suite F1",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "Game Vault - Game Store & Cafe",
+        "phone_number": "9153309545",
+        "entry_fee": "7.000",
+        "entry_fee_currency_code": "USD"
+    },
+    {
+        "latitude": 41.4343249,
+        "longitude": -91.0312281,
+        "start_datetime": "2024-06-04T18:00:00",
+        "timezone": "America/Chicago",
+        "max_join_count": 16,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-IA",
+        "postcode": "52761",
+        "city_code": "Muscatine",
+        "street_address": "429 Lake Park Blvd Muscatine, Iowa 52761",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "Remis Arcane Exchange",
+        "phone_number": "5635067395",
+        "entry_fee": "0.000",
+        "entry_fee_currency_code": "USD"
+    },
+    {
+        "latitude": 38.4979216,
+        "longitude": -90.3378124,
+        "start_datetime": "2024-06-04T18:00:00",
+        "timezone": "America/Chicago",
+        "max_join_count": 24,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-MO",
+        "postcode": "63129",
+        "city_code": "Saint Louis",
+        "street_address": "4530 Lemay Ferry Rd, Suite F",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "Unique Emporium",
+        "phone_number": "3142009862",
+        "entry_fee": "5.000",
+        "entry_fee_currency_code": "$"
+    },
+    {
+        "latitude": 33.6276875,
+        "longitude": -111.8914994,
+        "start_datetime": "2024-06-04T18:00:00",
+        "timezone": "America/Phoenix",
+        "max_join_count": 32,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-AZ",
+        "postcode": "85260",
+        "city_code": "Scottsdale",
+        "street_address": "15609 N Hayden Rd Ste N 137 ",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "Old World Games",
+        "phone_number": "6026676816",
+        "entry_fee": "10.000",
+        "entry_fee_currency_code": "$"
+    },
+    {
+        "latitude": 37.5966303,
+        "longitude": -93.4044976,
+        "start_datetime": "2024-06-04T18:00:00",
+        "timezone": "America/Chicago",
+        "max_join_count": 16,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-MO",
+        "postcode": "65613",
+        "city_code": "Bolivar",
+        "street_address": "800 E. Aldrich Rd. Suite F",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "C and K Cards Games and More",
+        "phone_number": "4177770111",
+        "entry_fee": "5.000",
+        "entry_fee_currency_code": "USD"
+    },
+    {
+        "latitude": 33.1960027,
+        "longitude": -80.0131374,
+        "start_datetime": "2024-06-04T18:00:00",
+        "timezone": "America/New_York",
+        "max_join_count": 32,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-SC",
+        "postcode": "29461",
+        "city_code": "Moncks Corner",
+        "street_address": "Unit 98",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "Zenergy Gamers North",
+        "phone_number": "8438994263",
+        "entry_fee": "10.000",
+        "entry_fee_currency_code": "USD"
+    },
+    {
+        "latitude": 37.675634782483,
+        "longitude": -120.95878601074,
+        "start_datetime": "2024-06-04T18:15:00",
+        "timezone": "America/Los_Angeles",
+        "max_join_count": 16,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-CA",
+        "postcode": "95355",
+        "city_code": "Modesto",
+        "street_address": "2307 Oakdale Rd Ste #601",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "SimplyUnlucky Game Shop",
+        "phone_number": "2099184190",
+        "entry_fee": "15.000",
+        "entry_fee_currency_code": "$"
+    },
+    {
+        "latitude": 30.41709,
+        "longitude": -91.071235,
+        "start_datetime": "2024-06-04T18:30:00",
+        "timezone": "America/Chicago",
+        "max_join_count": 64,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-LA",
+        "postcode": "70816",
+        "city_code": "BATON ROUGE",
+        "street_address": "10330 AIRLINE HWY SUITE B10",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "THE ROGUE GAMES",
+        "phone_number": "2259308900",
+        "entry_fee": "10.000",
+        "entry_fee_currency_code": "$"
+    },
+    {
+        "latitude": 35.0927842,
+        "longitude": -78.9858009,
+        "start_datetime": "2024-06-04T18:30:00",
+        "timezone": "America/New_York",
+        "max_join_count": 28,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-NC",
+        "postcode": "28303",
+        "city_code": "Fayetteville",
+        "street_address": "5855 Yadkin Rd. Unit 4",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "Mana Rock LLC",
+        "phone_number": "2537322030",
+        "entry_fee": "10.000",
+        "entry_fee_currency_code": "USD"
+    },
+    {
+        "latitude": 37.6754207,
+        "longitude": -120.9583089,
+        "start_datetime": "2024-06-04T18:30:00",
+        "timezone": "America/Los_Angeles",
+        "max_join_count": 16,
+        "game_format_name": "OP Tournament Regulation",
+        "country_code": "US",
+        "pref_code": "US-CA",
+        "postcode": "95355",
+        "city_code": "Modesto",
+        "street_address": "2307 Oakdale Rd Ste 600",
+        "game_title": "ONE PIECE CARD GAME",
+        "organizer_name": "SimplyUnlucky Game Shop",
+        "phone_number": "2094080785",
+        "entry_fee": "15.000",
+        "entry_fee_currency_code": "$"
+    }
+];  // will be replaced by the Python script
+            console.log('Event data:', events);  // Log event data to console for debugging
+
+            events.forEach(function(event) {
+                var position = {lat: event.latitude, lng: event.longitude};
+                console.log('Adding marker at:', position);  // Log each marker position
+                var marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    title: event.game_title
+                });
+
+                var infoWindow = new google.maps.InfoWindow({
+                    content: `<div>
+                                <h3>${event.game_title}</h3>
+                                <p><strong>Organizer:</strong> ${event.organizer_name}</p>
+                                <p><strong>Address:</strong> ${event.street_address}, ${event.city_code}, ${event.pref_code}, ${event.postcode}, ${event.country_code}</p>
+                                <p><strong>Start Date:</strong> ${event.start_datetime}</p>
+                                <p><strong>Timezone:</strong> ${event.timezone}</p>
+                                <p><strong>Max Join Count:</strong> ${event.max_join_count}</p>
+                                <p><strong>Game Format Name:</strong> ${event.game_format_name}</p>
+                                <p><strong>Phone Number:</strong> ${event.phone_number}</p>
+                                <p><strong>Entry Fee:</strong> ${event.entry_fee_currency_code}${event.entry_fee}</p>
+                              </div>`
+                });
+
+                marker.addListener('click', function() {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+    </script>
+</head>
+<body onload="initMap()">
+    <div id="map" style="height: 100vh; width: 100%;"></div>
+</body>
+</html>
